@@ -99,9 +99,6 @@ const handleResend = async () => {
             <p className="text-white text-sm">Mã OTP đã được gửi đến:</p>
             <p className="text-yellow-400 font-medium">{email}</p>
             <p className="text-gray-400 text-xs mt-2">Vui lòng kiểm tra hộp thư và nhập mã 6 số</p>
-            <p className="text-gray-500 text-xs mt-1">
-              (Demo: sử dụng mã <span className="text-yellow-400">123456</span>)
-            </p>
           </div>
 
           <form onSubmit={handleVerifyOtp} className="space-y-4">
