@@ -8,6 +8,7 @@ import { useMovies } from "@/hooks/useMovies"
 import { useTickets } from "@/hooks/useTickets"
 import { useGuestSession } from "@/hooks/useGuestSession" 
 import ReactMarkdown from 'react-markdown';
+import { Textarea } from "@/components/ui/textarea"
 import {
   Send,
   Film,
@@ -352,7 +353,7 @@ export default function MainInterface({ user, isAuthenticated, onLogout }: MainI
                     <div
                       className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
                         message.from === "user" ? "bg-yellow-600 text-white" : "bg-gray-700 text-gray-100"
-                      }`}
+                      }whitespace-pre-wrap`}
                     >
                       <ReactMarkdown
                         components={{
@@ -391,18 +392,25 @@ export default function MainInterface({ user, isAuthenticated, onLogout }: MainI
             </ScrollArea>
 
             <div className="p-4 border-t border-gray-600">
-              <form onSubmit={handleSubmit} className="flex gap-2">
-                <Input
+              <form onSubmit={handleSubmit} className="flex gap-2 items-end">
+                <Textarea // Thay thế Input bằng Textarea
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => { // Thêm onKeyDown để xử lý Enter và Shift+Enter
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                      e.preventDefault(); // Ngăn chặn xuống dòng mặc định của Enter
+                      handleSubmit(e); // Gửi tin nhắn
+                    }
+                  }}
                   placeholder="Hỏi tôi về phim, lịch chiếu, hoặc đặt vé..."
-                  className="flex-1 bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-yellow-400"
+                  className="flex-1 bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-yellow-400 min-h-[40px] resize-none" // Thêm min-h và resize-none
+                  rows={1} 
                   disabled={chatLoading}
                 />
                 <Button
                   type="submit"
                   disabled={chatLoading || !input.trim()}
-                  className="bg-yellow-600 hover:bg-yellow-700 text-white"
+                  className="bg-yellow-600 hover:bg-yellow-700 text-white h-10"
                 >
                   <Send className="w-4 h-4" />
                 </Button>
