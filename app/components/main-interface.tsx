@@ -134,7 +134,7 @@ export default function MainInterface({ user, isAuthenticated, onLogout }: MainI
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex">
       {/* Left Sidebar - Top Watched Movies */}
-      <div className="w-90 bg-black/30 backdrop-blur-sm border-r border-yellow-400/20 relative">
+      <div className="w-80 bg-black/30 backdrop-blur-sm border-r border-yellow-400/20 relative">
         <div className="p-4 border-b border-yellow-400/20">
           <h2 className="text-xl font-bold text-white flex items-center gap-2">
             <TrendingUp className="w-5 h-5 text-yellow-400" />
@@ -143,8 +143,8 @@ export default function MainInterface({ user, isAuthenticated, onLogout }: MainI
           <p className="text-gray-300 text-sm mt-1">Được xem nhiều nhất tuần này</p>
         </div>
 
-        <ScrollArea className="h-[calc(100vh-100px)]">
-          <div className="p-4 space-y-4 pb-48">
+        <ScrollArea className="h-[calc(100vh-90px)]">
+          <div className="p-4 space-y-4 pb-40">
             {moviesLoading ? (
               <div className="text-center text-gray-400 py-8">Đang tải...</div>
             ) : (
@@ -320,8 +320,8 @@ export default function MainInterface({ user, isAuthenticated, onLogout }: MainI
                 <Film className="w-6 h-6 text-yellow-600" />
               </div>
               <div>
-                <CardTitle className="text-white text-lg">CineBot Assistant</CardTitle>
-                <p className="text-yellow-100 text-sm">Xin chào {user?.name || "khách"}! Sẵn sàng hỗ trợ bạn</p>
+                <CardTitle className="text-white text-lg">Trợ lý CineBot</CardTitle>
+                <p className="text-yellow-100 text-sm">Xin chào {user?.name || "khách hàng"}! Sẵn sàng hỗ trợ bạn</p>
               </div>
               <div className="ml-auto flex items-center gap-2">
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
@@ -413,7 +413,7 @@ export default function MainInterface({ user, isAuthenticated, onLogout }: MainI
       </div>
 
       {/* Right Sidebar - Now Showing Movies */}
-      <div className="w-90 bg-black/30 backdrop-blur-sm border-l border-yellow-400/20 relative">
+      <div className="w-80 bg-black/30 backdrop-blur-sm border-l border-yellow-400/20 relative">
         <div className="p-4 border-b border-yellow-400/20">
           <h2 className="text-xl font-bold text-white flex items-center gap-2">
             <Calendar className="w-5 h-5 text-yellow-400" />
@@ -422,7 +422,7 @@ export default function MainInterface({ user, isAuthenticated, onLogout }: MainI
           <p className="text-gray-300 text-sm mt-1">Đang chiếu tại rạp</p>
         </div>
 
-        <ScrollArea className="h-[calc(100vh-100px)]">
+        <ScrollArea className="h-[calc(100vh-70px)]">
           <div className="p-4 space-y-4 pb-48">
             {moviesLoading ? (
               <div className="text-center text-gray-400 py-8">Đang tải...</div>

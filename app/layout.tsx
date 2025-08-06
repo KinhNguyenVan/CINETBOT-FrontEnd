@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   title: 'CineBot - Trợ lý AI rạp chiếu phim',
   description: 'Created with Trợ lý AI thông minh của rạp chiếu phim Galaxy Cinema',
   icons:{
-    icon: "/icon_web.webp",
-    shortcut: "/icon_web.webp"
+    icon: "/icon.png",
+    shortcut: "/icon.png"
   },
   generator: 'v0.dev',
 }
