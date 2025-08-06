@@ -4,8 +4,12 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'CineBot - Trợ lý AI rạp chiếu phim',
+  description: 'Created with Trợ lý AI thông minh của rạp chiếu phim Galaxy Cinema',
+  icons:{
+    icon: "/icon_web.webp",
+    shortcut: "/icon_web.webp"
+  },
   generator: 'v0.dev',
 }
 
