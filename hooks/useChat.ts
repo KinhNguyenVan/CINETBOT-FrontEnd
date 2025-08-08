@@ -45,7 +45,7 @@ export function useChat(email?: string, sessionId?: string, token?: string) {
     setIsLoading(true);
     try {
       const res = await chatApi.sendMessage(message, sessionId, token);
-      setMessages((prev) => [...prev, { from: 'agent', text: res.response }]); // response, not reply!
+      setMessages((prev) => [...prev, { from: 'agent', text: res.response }]); 
     } catch (err: any) {
       setMessages((prev) => [...prev, { from: 'agent', text: 'Xin lỗi, đã xảy ra lỗi.' }]);
     } finally {

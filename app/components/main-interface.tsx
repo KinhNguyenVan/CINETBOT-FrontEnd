@@ -352,7 +352,7 @@ export default function MainInterface({ user, isAuthenticated, onLogout }: MainI
                   <div key={index} className={`flex ${message.from === "user" ? "justify-end" : "justify-start"}`}>
                     <div
                       className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
-                        message.from === "user" ? "bg-yellow-600 text-white" : "bg-gray-700 text-gray-100"
+                        message.from === "user" ? "bg-yellow-600 text-white" : "bg-gray-800 text-white"
                       }whitespace-pre-wrap`}
                     >
                       <ReactMarkdown
@@ -363,6 +363,7 @@ export default function MainInterface({ user, isAuthenticated, onLogout }: MainI
                           li: ({ node, ...props }) => <li className="mb-1" {...props} />,
                         }}
                       >
+                        
                         {message.text}
                       </ReactMarkdown>
 
@@ -372,7 +373,7 @@ export default function MainInterface({ user, isAuthenticated, onLogout }: MainI
 
                 {chatLoading && (
                   <div className="flex justify-start">
-                    <div className="bg-gray-700 text-gray-100 px-4 py-2 rounded-lg">
+                    <div className="bg-gray-800 text-white px-4 py-2 rounded-lg">
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce"></div>
                         <div
