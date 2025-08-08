@@ -358,9 +358,9 @@ export default function MainInterface({ user, isAuthenticated, onLogout }: MainI
                       <ReactMarkdown
                         components={{
                           p: ({ node, ...props }) => <p className="mb-2 text-white" {...props} />,
-                          strong: ({ node, ...props }) => <strong className="font-semibold" {...props} />,
-                          ul: ({ node, ...props }) => <ul className="list-disc ml-5" {...props} />,
-                          li: ({ node, ...props }) => <li className="mb-1" {...props} />,
+                          strong: ({ node, ...props }) => <strong className="font-semibold text-white" {...props} />,
+                          ul: ({ node, ...props }) => <ul className="list-disc ml-5 text-white" {...props} />,
+                          li: ({ node, ...props }) => <li className="mb-1 text-white" {...props} />,
                         }}
                       >
                         
